@@ -1,22 +1,35 @@
 body {
   display: flex;
+  flex-direction: column;  /* stack children (button) vertically */
   justify-content: center; /* horizontal centering */
   align-items: center;     /* vertical centering */
   height: 100vh;           /* full viewport height */
   margin: 0;               /* remove default margin */
+  gap: 1rem;               /* space between children */
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;       /* pointer cursor on hover */
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
     width: 80vmin;
-    aspect-ratio: 1 / 1; /* keeps container square */
+    aspect-ratio: 1 / 1;   /* keeps container square */
     border: 2px solid black;
 }
 
 .grid div {
     flex: 0 0 calc(100% / 16);  /* 16 cells per row */
-    aspect-ratio: 1 / 1; /* keeps cells squares */
+    aspect-ratio: 1 / 1;   /* keeps cells squares */
     border: 1px solid #ccc;
     box-sizing: border-box; /* include border in size */
+    background-color: white;
+}
+
+.grid div.hovered {
+    background-color: rgb(39, 39, 161);
 }
